@@ -1,9 +1,11 @@
+import { Container, Photo, Status } from './friendlistitem.styled';
+
 export function FriendListItem(data) {
   return (
-    <div>
-      <span className="status">{data.isOnline ? 'online' : 'offline'}</span>
-      <img className="avatar" src={data.avatar} alt={data.name} width="48" />
-      <p className="name">{data.name}</p>
-    </div>
+    <Container>
+      <Status className={data.isOnline}></Status>
+      <Photo src={data.avatar} alt={data.name} width="48" />
+      <p>{data.name}</p>
+    </Container>
   );
 }

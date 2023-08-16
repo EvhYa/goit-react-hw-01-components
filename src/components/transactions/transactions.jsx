@@ -1,9 +1,10 @@
 import { Transaction } from './transaction';
+import { Table } from './transactions.styled';
 
 export function TransactionHistory(props) {
   const transactions = props.items;
   return (
-    <table className="transaction-history">
+    <Table>
       <thead>
         <tr>
           <th>Type</th>
@@ -18,6 +19,6 @@ export function TransactionHistory(props) {
           </tr>
         ))}
       </tbody>
-    </table>
+    </Table>
   );
 }

@@ -1,17 +1,21 @@
+import { Container, List, ListItem, Title } from './statistics.styled';
+
 export function Statistics(props) {
   const stats = props.stats;
   const title = props.title;
   return (
-    <section className="statistics">
-      {{title} ? <h2 className="title">{title}</h2> : ""}
-      <ul className="stat-list">
-        {stats.map(({ id, label, percentage }) => (
-          <li className="item" key={id}>
-            <span className="label">{label}</span>
-            <span className="percentage">{percentage}%</span>
-          </li>
-        ))}
-      </ul>
+    <section>
+      <Container>
+        {title && <Title>{title}</Title>}
+        <List className="stat-list">
+          {stats.map(({ id, label, percentage }) => (
+            <ListItem className="item" key={id}>
+              <span>{label}</span>
+              <span>{percentage}%</span>
+            </ListItem>
+          ))}
+        </List>
+      </Container>
     </section>
   );
 }

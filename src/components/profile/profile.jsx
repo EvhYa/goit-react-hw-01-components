@@ -1,27 +1,27 @@
-// import user from 'hwdata/user.json';
-// console.log(user);
+import { Container, Info, List, ListItem, Name, Photo } from './profile.styled';
+
 export const Profile = ({ username, avatar, tag, location, stats }) => (
-  <div className="profile">
-    <div className="description">
-      <img src={avatar} alt="User avatar" className="avatar" />
-      <p className="name">{username}</p>
-      <p className="tag">@{tag}</p>
-      <p className="location">{location}</p>
+  <Container>
+    <div>
+      <Photo src={avatar} alt="User avatar" />
+      <Name>{username}</Name>
+      <Info>@{tag}</Info>
+      <Info>{location}</Info>
     </div>
 
-    <ul className="stats">
-      <li>
+    <List>
+      <ListItem>
         <span className="label">Followers</span>
         <span className="quantity">{stats.followers}</span>
-      </li>
-      <li>
+      </ListItem>
+      <ListItem className="second">
         <span className="label">Views</span>
         <span className="quantity">{stats.views}</span>
-      </li>
-      <li>
+      </ListItem>
+      <ListItem>
         <span className="label">Likes</span>
         <span className="quantity">{stats.likes}</span>
-      </li>
-    </ul>
-  </div>
+      </ListItem>
+    </List>
+  </Container>
 );
