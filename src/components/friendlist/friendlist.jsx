@@ -1,8 +1,9 @@
 import { Container, List, ListItem } from './friendlist.styled';
 import { FriendListItem } from './friendlistitem';
+import PropTypes from 'prop-types';
 
-export function FriendList(props) {
-  const friends = props.friends;
+
+export function FriendList({friends}) {
   return (
     <Container>
       <List>
@@ -19,3 +20,7 @@ export function FriendList(props) {
     </Container>
   );
 }
+
+FriendList.propTypes = {
+  friends: PropTypes.array.isRequired,
+};

@@ -1,8 +1,8 @@
 import { Container, List, ListItem, Title } from './statistics.styled';
+import PropTypes from 'prop-types';
 
-export function Statistics(props) {
-  const stats = props.stats;
-  const title = props.title;
+
+export function Statistics({stats, title}) {
   return (
     <section>
       <Container>
@@ -19,3 +19,8 @@ export function Statistics(props) {
     </section>
   );
 }
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.array.isRequired,
+};

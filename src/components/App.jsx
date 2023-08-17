@@ -6,7 +6,6 @@ import user from 'hwdata/user.json';
 import data from 'hwdata/data.json';
 import friends from 'hwdata/friends.json';
 import transactions from 'hwdata/transactions.json';
-import PropTypes from 'prop-types';
 
 export const App = () => {
   return (
@@ -24,25 +23,4 @@ export const App = () => {
       <TransactionHistory items={transactions} />
     </div>
   );
-};
-
-Profile.propTypes = {
-  username: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  stats: PropTypes.object.isRequired,
-};
-
-Statistics.propTypes = {
-  title: PropTypes.string,
-  stats: PropTypes.array.isRequired,
-};
-
-FriendList.propTypes = {
-  friends: PropTypes.array.isRequired,
-};
-
-TransactionHistory.propTypes = {
-  items: PropTypes.array.isRequired,
 };
